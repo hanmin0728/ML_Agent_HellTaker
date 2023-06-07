@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class MapArray
 {
-    public int[,] mapArray;
+    public int[] array = new int[9];
 }
 
 public class MapManager : MonoBehaviour
@@ -16,36 +16,96 @@ public class MapManager : MonoBehaviour
     public MapArray[] mapArrays;
 
     public GameObject a;
-    void Start()
-    {
-        //mapArrays = new int[xLength, yLength];
+    public int x, y = 0;
 
-        //for (int i = 0; i < xLength; ++i)
-        //{
-        //    for (int j = 0; j < yLength; ++j)
-        //    {
-        //        mapArray[i, j] = 0;
-        //        Debug.Log(mapArray[i, j]);
-        //    }
-        //}
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            a.transform.Translate(Vector3.right);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            a.transform.Translate(Vector3.left);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            a.transform.Translate(Vector3.up);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            a.transform.Translate(Vector3.down);
-        }
-    }
+    public int plusValue = 0;
+
+    public int moveCnt = 0;
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.D))
+    //    {
+    //        plusValue = 1;
+    //        moveCnt++;
+
+    //        if (mapArrays[y].array[x + plusValue] == 1)
+    //        {
+    //            a.transform.Translate(Vector3.right);
+    //            x++;
+    //            plusValue = 0;
+    //        }
+    //        else if (mapArrays[y].array[x + plusValue] == 2)
+    //        {
+    //            Debug.Log("끝남");
+    //        }
+    //        else
+    //        {
+    //            plusValue = 0;
+    //            Debug.Log("못감 진짜 못감");
+    //        }
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        plusValue = -1;
+    //        moveCnt++;
+
+    //        if (mapArrays[y].array[x + plusValue] == 1)
+    //        {
+    //            a.transform.Translate(Vector3.left);
+    //            x--;
+    //            plusValue = 0;
+    //        }
+    //        else if (mapArrays[y].array[x + plusValue] == 2)
+    //        {
+    //            Debug.Log("끝남");
+    //        }
+    //        else
+    //        {
+    //            plusValue = 0;
+    //            Debug.Log("못감 진짜 못감");
+    //        }
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        plusValue = 1;
+    //        moveCnt++;
+
+    //        if (mapArrays[y + plusValue].array[x] == 1)
+    //        {
+    //            a.transform.Translate(Vector3.up);
+    //            y++;
+    //            plusValue = 0;
+    //        }
+    //        else if (mapArrays[y + plusValue].array[x] == 2)
+    //        {
+    //            Debug.Log("끝남");
+    //        }
+    //        else
+    //        {
+    //            plusValue = 0;
+    //            Debug.Log("못감 진짜 못감");
+    //        }
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.S))
+    //    {
+    //        plusValue = -1;
+    //        moveCnt++;
+
+    //        if (mapArrays[y + plusValue].array[x] == 1)
+    //        {
+    //            a.transform.Translate(Vector3.down);
+    //            y--;
+    //            plusValue = 0;
+    //        }
+    //        else if (mapArrays[y + plusValue].array[x + plusValue] == 2)
+    //        {
+    //            Debug.Log("끝남");
+    //        }
+    //        else
+    //        {
+    //            plusValue = 0;
+    //            Debug.Log("못감 진짜 못감");
+    //        }
+    //    }
+    //}
 }
